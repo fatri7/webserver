@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebServer Dashboard</title>
+    <style>
+        body { font-family: system-ui, -apple-system, sans-serif; background: #0f172a; color: #e2e8f0; display: flex; justify-content: center; min-height: 100vh; margin: 0; }
+        .container { width: 90%; max-width: 800px; padding: 2rem; }
+        h1 { background: linear-gradient(90deg, #00ff88, #00b8ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        
+        /* 卡片风格 */
+        .card { background: #1e293b; border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; border: 1px solid #334155; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); }
+        .card h2 { margin-top: 0; color: #94a3b8; font-size: 1.2rem; }
+        
+        /* 按钮 */
+        .btn-group { display: flex; gap: 1rem; }
+        .btn { padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; color: #0f172a; font-weight: bold; transition: transform 0.2s; }
+        .btn-primary { background: #00ff88; }
+        .btn-secondary { background: #38bdf8; }
+        .btn:hover { transform: translateY(-2px); opacity: 0.9; }
+
+        /* 媒体测试区 */
+        .media-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        .media-box { background: #000; border-radius: 8px; overflow: hidden; height: 200px; display: flex; align-items: center; justify-content: center; color: #64748b; }
+        img, video { width: 100%; height: 100%; object-fit: cover; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 C++20 WebServer</h1>
+        
+        <div class="card">
+            <h2>功能测试 (POST请求)</h2>
+            <div class="btn-group">
+                <a href="/login.html" class="btn btn-primary">登录测试</a>
+                <a href="/register.html" class="btn btn-secondary">注册测试</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>静态资源加载测试</h2>
+            <div class="media-grid">
+                <div class="media-box">
+                    <img src="assets/test.jpg" alt="图片测试" onerror="this.style.display='none';this.parentNode.innerHTML='❌ 图片加载失败 (需放入 assets/test.jpg)'">
+                </div>
+                <div class="media-box">
+                    <video controls src="assets/test.mp4" onerror="this.style.display='none';this.parentNode.innerHTML='❌ 视频加载失败 (需放入 assets/test.mp4)'"></video>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
